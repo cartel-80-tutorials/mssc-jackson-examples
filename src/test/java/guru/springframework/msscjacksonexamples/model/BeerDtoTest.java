@@ -10,8 +10,6 @@ import java.io.IOException;
 
 @JsonTest
 class BeerDtoTest extends BaseTest{
-    @Autowired
-    ObjectMapper mapper;
 
     @Test
     void testSerializeDto() throws JsonProcessingException {
@@ -24,8 +22,7 @@ class BeerDtoTest extends BaseTest{
     
     @Test
     void testDeserialize() throws IOException {
-        String json = "{\"id\":\"59e44df9-8fc0-4ae8-933a-5eec9569e1a1\",\"beerName\":\"BeerName\",\"beerStyle\":\"Ale\",\"upc\":1234568901,\"price\":12.99,\"createdDate\":\"2021-09-20T23:04:18.365075-03:00\",\"lastUpdatedDate\":\"2021-09-20T23:04:18.366638-03:00\"}\n";
-
+        String json = "{\"beerName\":\"BeerName\",\"beerStyle\":\"Ale\",\"upc\":1234568901,\"price\":\"12.99\",\"createdDate\":\"2021-09-20T23:39:08.994571-03:00\",\"lastUpdatedDate\":\"2021-09-20T23:31:27.393054-03:00\",\"myLocalDate\":\"20210920\",\"beerId\":\"bc1105d1-f5d2-45bc-97a5-9671085521c9\"}\n";
         BeerDto dto = mapper.readValue(json, BeerDto.class);
 
         System.out.println(dto);
